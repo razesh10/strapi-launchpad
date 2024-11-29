@@ -14,7 +14,7 @@ export const Hero2 = ({
 }: {
   heading: string;
   sub_heading: string;
-  bg_image: {
+  bg_image?: {
     url: string;
     alt: string;
   };
@@ -23,16 +23,16 @@ export const Hero2 = ({
 }) => {
   return (
     <div
-      className="h-screen overflow-hidden relative flex flex-col items-center justify-center bg-neutral-700"
+      className="h-screen overflow-hidden relative flex flex-col items-center justify-center max-w-7xl mx-auto "
       style={{
-        backgroundImage: `url(${strapiImage(bg_image?.url)})`,
+        backgroundImage: `url(${bg_image && strapiImage(bg_image?.url)})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <Heading
         as="h1"
-        className="text-4xl md:text-4xl lg:text-8xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-10  py-6"
+        className="text-4xl md:text-4xl lg:text-8xl font-semibold text-center mt-6 relative z-10  py-6"
       >
         {heading}
       </Heading>
