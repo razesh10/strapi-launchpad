@@ -102,6 +102,20 @@ export interface DynamicZoneFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicZoneFeature2 extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_feature2s';
+  info: {
+    description: '';
+    displayName: 'Feature2';
+    icon: 'bulletList';
+  };
+  attributes: {
+    data: Schema.Attribute.Component<'shared.feature-card', true>;
+    heading: Schema.Attribute.String;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
 export interface DynamicZoneFeatures extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_features';
   info: {
@@ -150,6 +164,19 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
   };
   attributes: {
     CTAs: Schema.Attribute.Component<'shared.button', true>;
+    heading: Schema.Attribute.String;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneHero2 extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_hero2s';
+  info: {
+    displayName: 'Hero2';
+  };
+  attributes: {
+    bg_image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    buttons: Schema.Attribute.Component<'shared.button', true>;
     heading: Schema.Attribute.String;
     sub_heading: Schema.Attribute.String;
   };
@@ -260,6 +287,19 @@ export interface GlobalFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalNav1 extends Struct.ComponentSchema {
+  collectionName: 'components_global_nav1s';
+  info: {
+    description: '';
+    displayName: 'Nav1';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    menus: Schema.Attribute.Component<'shared.link', true>;
+    socials: Schema.Attribute.Component<'shared.link', true>;
+  };
+}
+
 export interface GlobalNavbar extends Struct.ComponentSchema {
   collectionName: 'components_global_navbars';
   info: {
@@ -338,6 +378,17 @@ export interface ItemsLeftNavbarItems extends Struct.ComponentSchema {
   };
 }
 
+export interface ItemsMenus extends Struct.ComponentSchema {
+  collectionName: 'components_items_menus';
+  info: {
+    displayName: 'menus';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface ItemsRayItems extends Struct.ComponentSchema {
   collectionName: 'components_items_ray_items';
   info: {
@@ -349,6 +400,21 @@ export interface ItemsRayItems extends Struct.ComponentSchema {
     item_1: Schema.Attribute.String;
     item_2: Schema.Attribute.String;
     item_3: Schema.Attribute.String;
+  };
+}
+
+export interface ItemsSocials extends Struct.ComponentSchema {
+  collectionName: 'components_items_socials';
+  info: {
+    description: '';
+    displayName: 'Socials';
+  };
+  attributes: {
+    path: Schema.Attribute.String;
+    platform: Schema.Attribute.String;
+    target: Schema.Attribute.Enumeration<
+      ['_blank', '_self', '_parent', '_top']
+    >;
   };
 }
 
@@ -369,6 +435,17 @@ export interface SharedButton extends Struct.ComponentSchema {
       ['simple', 'outline', 'primary', 'muted']
     > &
       Schema.Attribute.DefaultTo<'primary'>;
+  };
+}
+
+export interface SharedFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_feature_cards';
+  info: {
+    displayName: 'Feature_Card';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
   };
 }
 
@@ -515,9 +592,11 @@ declare module '@strapi/strapi' {
       'dynamic-zone.brands': DynamicZoneBrands;
       'dynamic-zone.cta': DynamicZoneCta;
       'dynamic-zone.faq': DynamicZoneFaq;
+      'dynamic-zone.feature2': DynamicZoneFeature2;
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.form-next-to-section': DynamicZoneFormNextToSection;
       'dynamic-zone.hero': DynamicZoneHero;
+      'dynamic-zone.hero2': DynamicZoneHero2;
       'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
       'dynamic-zone.launches': DynamicZoneLaunches;
       'dynamic-zone.pricing': DynamicZonePricing;
@@ -525,12 +604,16 @@ declare module '@strapi/strapi' {
       'dynamic-zone.related-products': DynamicZoneRelatedProducts;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
+      'global.nav1': GlobalNav1;
       'global.navbar': GlobalNavbar;
       'items.graph-card-top-items': ItemsGraphCardTopItems;
       'items.input': ItemsInput;
       'items.left-navbar-items': ItemsLeftNavbarItems;
+      'items.menus': ItemsMenus;
       'items.ray-items': ItemsRayItems;
+      'items.socials': ItemsSocials;
       'shared.button': SharedButton;
+      'shared.feature-card': SharedFeatureCard;
       'shared.form': SharedForm;
       'shared.launches': SharedLaunches;
       'shared.link': SharedLink;
