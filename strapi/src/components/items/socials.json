@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_items_socials",
+  "info": {
+    "displayName": "Socials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ]
+    }
+  }
+}

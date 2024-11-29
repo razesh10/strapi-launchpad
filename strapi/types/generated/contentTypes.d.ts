@@ -666,6 +666,41 @@ export interface ApiLogoLogo extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNav1Nav1 extends Struct.SingleTypeSchema {
+  collectionName: 'nav1s';
+  info: {
+    description: '';
+    displayName: 'Nav1';
+    pluralName: 'nav1s';
+    singularName: 'nav1';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::nav1.nav1'>;
+    Navbar: Schema.Attribute.Component<'global.nav1', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -698,6 +733,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'dynamic-zone.cta',
         'dynamic-zone.form-next-to-section',
         'dynamic-zone.faq',
+        'dynamic-zone.hero2',
+        'dynamic-zone.feature2',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1462,6 +1499,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::logo.logo': ApiLogoLogo;
+      'api::nav1.nav1': ApiNav1Nav1;
       'api::page.page': ApiPagePage;
       'api::plan.plan': ApiPlanPlan;
       'api::product-page.product-page': ApiProductPageProductPage;

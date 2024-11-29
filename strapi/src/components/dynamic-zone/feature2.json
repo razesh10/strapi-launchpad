@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_dynamic_zone_feature2s",
+  "info": {
+    "displayName": "Feature2",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    },
+    "data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.feature-card"
+    }
+  }
+}

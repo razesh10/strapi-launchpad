@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "nav1s",
+  "info": {
+    "singularName": "nav1",
+    "pluralName": "nav1s",
+    "displayName": "Nav1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Navbar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.nav1",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

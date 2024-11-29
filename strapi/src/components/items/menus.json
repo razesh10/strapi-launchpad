@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_items_menus",
+  "info": {
+    "displayName": "menus"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

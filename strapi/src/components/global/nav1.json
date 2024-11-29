@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_global_nav1s",
+  "info": {
+    "displayName": "Nav1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "menus": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}
