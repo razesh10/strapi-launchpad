@@ -25,7 +25,7 @@ const componentMapping: { [key: string]: any } = {
     { ssr: false }
   ),
   "dynamic-zone.how-it-works": dynamic(
-    () => import("./how-it-works").then((mod) => mod.HowItWorks),
+    () => import("./how-it-works").then((mod) => mod.HowItWorks2),
     { ssr: false }
   ),
   "dynamic-zone.brands": dynamic(
