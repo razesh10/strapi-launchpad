@@ -66,6 +66,16 @@ const componentMapping: { [key: string]: any } = {
     () => import("./Feature2").then((mod) => mod.Feature2),
     { ssr: false }
   ),
+  "dynamic-zone.cta2": dynamic(() => import("./cta2").then((mod) => mod.CTA2), {
+    ssr: false,
+  }),
+  "dynamic-zone.testimonials2": dynamic(
+    () =>
+      import("./testimonials/testimonials2").then((mod) => mod.Testimonial2),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 const DynamicZoneManager: React.FC<Props> = ({ dynamicZone, locale }) => {

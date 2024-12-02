@@ -30,6 +30,7 @@ export default async function HomePage({
     `filters[slug][$eq]=homepage&filters[locale][$eq]=${params.locale}`,
     true
   );
+  console.log(pageData.dynamic_zone[7]);
 
   return <PageContent pageData={pageData} />;
 }
