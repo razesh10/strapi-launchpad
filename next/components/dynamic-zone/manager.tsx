@@ -44,7 +44,7 @@ const componentMapping: { [key: string]: any } = {
     ssr: false,
   }),
   "dynamic-zone.form-next-to-section": dynamic(
-    () => import("./form-next-to-section").then((mod) => mod.FormNextToSection),
+    () => import("./contact1").then((mod) => mod.Contact1),
     { ssr: false }
   ),
   "dynamic-zone.faq": dynamic(() => import("./faq").then((mod) => mod.FAQ), {

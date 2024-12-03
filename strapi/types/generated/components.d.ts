@@ -159,6 +159,7 @@ export interface DynamicZoneFormNextToSection extends Struct.ComponentSchema {
   attributes: {
     form: Schema.Attribute.Component<'shared.form', false>;
     heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     section: Schema.Attribute.Component<'shared.section', false>;
     social_media_icon_links: Schema.Attribute.Component<
       'shared.social-media-icon-links',
@@ -588,7 +589,7 @@ export interface SharedSocialMediaIconLinks extends Struct.ComponentSchema {
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    link: Schema.Attribute.Component<'shared.link', true>;
+    link: Schema.Attribute.Component<'shared.link', false>;
   };
 }
 

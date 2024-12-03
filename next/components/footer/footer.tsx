@@ -27,7 +27,7 @@ export const Footer = ({ footer_row, locale, logo }: FooterProps) => {
               src={strapiImage(logo?.image?.url)}
               alt={logo?.image?.alt}
               height={40}
-              width={200}
+              width={150}
             />
           </Link>
         </div>
@@ -56,7 +56,7 @@ export const Footer = ({ footer_row, locale, logo }: FooterProps) => {
       <div className="w-full h-[1px] bg-neutral-600 max-w-7xl mx-auto"></div>
       <div>
         <p className="text-base text-neutral-400 text-center">
-          &copy; {new Date().getFullYear()} Khelpasal
+          &copy; {new Date().getFullYear()} xSite
         </p>
       </div>
     </div>

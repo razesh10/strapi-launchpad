@@ -13,6 +13,7 @@ import { ViewTransitions } from "next-view-transitions";
 import fetchContentType from "@/lib/strapi/fetchContentType";
 import { Button } from "antd";
 import Nav1 from "@/components/navbar/Nav1";
+import { Contact1 } from "@/components/dynamic-zone/contact1";
 
 const inter = Inter({
   subsets: ["latin"],
