@@ -22,7 +22,7 @@ export const FAQ = ({
           {sub_heading}
         </p>
       </div>
-      <div className="flex justify-center gap-10 py-20">
+      <div className="flex justify-center gap-10">
         <Accordion items={faqs} />
       </div>
     </Container>

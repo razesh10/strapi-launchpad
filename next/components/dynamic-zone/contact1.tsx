@@ -20,10 +20,10 @@ export const Contact1 = ({
   };
 }) => {
   return (
-    <div className="grid grid-cols-2 gap-20 max-w-7xl mx-auto px-4 py-40">
+    <div className="grid grid-cols-2 gap-20 max-w-7xl mx-auto px-4 py-32">
       <div className="flex flex-col gap-8 items-start w-full">
         <div className="flex flex-col items-start gap-2">
-          <h1 className="text-2xl text-white font-semibold">{heading}</h1>
+          <h1 className="text-3xl text-white font-semibold">{heading}</h1>
           <p className="text-left text-neutral-300">{sub_heading}</p>
         </div>
         <form className="flex flex-col gap-4 w-full">

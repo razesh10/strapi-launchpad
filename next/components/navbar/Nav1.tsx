@@ -62,13 +62,13 @@ export const Nav1 = ({ data, locale }: Props) => {
   };
   return (
     <div className="fixed top-0 z-40 w-full bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 backdrop-blur-lg">
-      <Flex className="justify-between items-center gap-[40px] px-4 py-2 max-w-7xl mx-auto">
+      <Flex className="justify-between items-center gap-[40px] px-4 py-3 max-w-7xl mx-auto">
         {data?.logo && (
           <Link href="./">
             <Image
               preview={false}
               src={strapiImage(data?.logo?.image?.url)}
-              height={25}
+              height={28}
               alt={data?.logo?.image?.alt}
             />
           </Link>
@@ -82,10 +82,10 @@ export const Nav1 = ({ data, locale }: Props) => {
                   href={`/${locale}/${menu?.URL}`}
                   className="group/menu"
                 >
-                  <Text className="!text-white py-3 font-medium">
+                  <Text className="!text-white group-hover/menu:!text-blue-500 py-3 font-medium !text-base">
                     {menu?.text}
                   </Text>
-                  <div className="w-0 h-[1px] bg-white group-hover/menu:w-full transition-all duration-300 ease-in-out"></div>
+                  <div className="w-0 h-[1px] bg-blue-500 group-hover/menu:w-full transition-all duration-300 ease-in-out"></div>
                 </Link>
               );
             })}
