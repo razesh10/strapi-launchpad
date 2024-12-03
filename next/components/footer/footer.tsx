@@ -18,7 +18,7 @@ type FooterProps = {
 
 export const Footer = ({ footer_row, locale, logo }: FooterProps) => {
   return (
-    <div className="flex flex-col items-center gap-8 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-800 pt-20 pb-8 px-4">
+    <div className="flex flex-col items-center gap-8 bg-gradient-to-br from-blue-900 via-blue-950 to-gray-800 pt-20 pb-8 px-4">
       <div className="flex justify-between items-start gap-4 max-w-7xl mx-auto w-full">
         {/* Left */}
         <div className="flex flex-col gap-6 md:gap-10">

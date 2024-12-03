@@ -28,12 +28,9 @@ export const Hero2 = ({
         backgroundImage: `url(${bg_image && strapiImage(bg_image?.url)})`,
       }}
     >
-      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-blue-950 via-slate-900 to-slate-800 opacity-[0.99] w-full h-full"></div>
-      <div className="overflow-hidden flex flex-col items-center justify-center px-8 z-10">
-        <Heading
-          as="h2"
-          className="text-4xl md:text-4xl lg:text-8xl font-semibold text-center mt-6 relative z-10  py-6"
-        >
+      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-blue-950 via-slate-900 to-slate-800 opacity-[0.95] w-full h-full"></div>
+      <div className="overflow-hidden flex flex-col items-center justify-center px-8 z-10 gap-2 md:gap-4 lg:gap-6">
+        <Heading as="h2" className="lg:!text-6xl font-bold text-center">
           {heading}
         </Heading>
         <Subheading>{sub_heading}</Subheading>

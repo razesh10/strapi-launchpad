@@ -52,10 +52,10 @@ export const HowItWorks2 = ({
   steps: any;
 }) => {
   return (
-    <div className="bg-gradient-to-bl from-transparent via-transparent via-slate-900 to-blue-950">
-      <Container className="py-40 max-w-7xl mx-auto relative z-40 flex flex-col items-center gap-20">
+    <div className="bg-gradient-to-bl to-transparent via-slate-900 from-blue-950">
+      <Container className="py-40 max-w-7xl mx-auto relative flex flex-col items-center gap-20">
         <div className="flex flex-col gap-2 items-center">
-          <Heading className="text-center font-bold !text-5xl">
+          <Heading className="text-center font-bold !text-4xl">
             {heading}
           </Heading>
           <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>

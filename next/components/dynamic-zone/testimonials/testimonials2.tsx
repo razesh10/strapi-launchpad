@@ -86,12 +86,12 @@ export const Testimonial2 = ({
     arrows: false,
   };
   return (
-    <div className="flex flex-col gap-[120px] py-20 overflow-visible max-w-7xl mx-auto">
+    <div className="flex flex-col gap-[120px] py-40 overflow-visible max-w-7xl mx-auto">
       <div>
         <Heading
           as={"h2"}
           size="md"
-          className="text-center font-bold !text-5xl"
+          className="text-center font-bold !text-4xl"
         >
           {heading}
         </Heading>
