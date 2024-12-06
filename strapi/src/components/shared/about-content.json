@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_about_contents",
+  "info": {
+    "displayName": "aboutContent"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    }
+  }
+}

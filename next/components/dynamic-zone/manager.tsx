@@ -76,6 +76,18 @@ const componentMapping: { [key: string]: any } = {
       ssr: false,
     }
   ),
+  "dynamic-zone.who-are-we": dynamic(
+    () => import("./about/who-are-we").then((mod) => mod.WhoAreWe),
+    {
+      ssr: false,
+    }
+  ),
+  "dynamic-zone.hero-about": dynamic(
+    () => import("./about/hero-about").then((mod) => mod.HeroAbout),
+    {
+      ssr: false,
+    }
+  ),
 };
 
 const DynamicZoneManager: React.FC<Props> = ({ dynamicZone, locale }) => {

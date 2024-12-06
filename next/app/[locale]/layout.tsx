@@ -6,14 +6,14 @@ import { Inter } from "next/font/google";
 import { generateMetadataObject } from "@/lib/shared/metadata";
 
 import { Footer } from "@/components/footer/footer";
-import { Navbar } from "@/components/navbar";
 import { CartProvider } from "@/context/cart-context";
 import { cn } from "@/lib/utils";
 import { ViewTransitions } from "next-view-transitions";
 import fetchContentType from "@/lib/strapi/fetchContentType";
-import { Button } from "antd";
 import Nav1 from "@/components/navbar/Nav1";
-import { Contact1 } from "@/components/dynamic-zone/contact1";
+import { WhoAreWe } from "@/components/dynamic-zone/about/who-are-we";
+import { HeroAbout } from "@/components/dynamic-zone/about/hero-about";
+import { Video } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,9 +74,11 @@ export default async function LocaleLayout({
                 "bg-gradient-to-br from-slate-950 via-blue-950 to-slate-800 antialiased h-full w-full"
               )}
             >
-              <Nav1 data={nav1Data.Navbar} locale={locale} />
-              {children}
+              <div className="mb-[60px]">
+                <Nav1 data={nav1Data.Navbar} locale={locale} />
+              </div>
 
+              {children}
               <Footer
                 footer_row={footer.footer_row}
                 locale={locale}

@@ -773,6 +773,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'dynamic-zone.feature2',
         'dynamic-zone.cta2',
         'dynamic-zone.testimonials2',
+        'dynamic-zone.who-are-we',
+        'dynamic-zone.hero-about',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

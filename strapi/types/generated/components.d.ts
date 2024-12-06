@@ -183,6 +183,21 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicZoneHeroAbout extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_hero_abouts';
+  info: {
+    description: '';
+    displayName: 'hero_about';
+  };
+  attributes: {
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface DynamicZoneHero2 extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_hero2s';
   info: {
@@ -292,6 +307,22 @@ export interface DynamicZoneTestimonials2 extends Struct.ComponentSchema {
     data: Schema.Attribute.Component<'shared.testimonials-data', true>;
     heading: Schema.Attribute.String;
     sub_heading: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneWhoAreWe extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_who_are_wes';
+  info: {
+    description: '';
+    displayName: 'Who_are_we';
+  };
+  attributes: {
+    contents: Schema.Attribute.Component<'shared.about-content', false>;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    statData: Schema.Attribute.Component<'shared.stats', true>;
+    videoData: Schema.Attribute.Component<'shared.video', false>;
   };
 }
 
@@ -445,6 +476,18 @@ export interface ItemsSocials extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAboutContent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_about_contents';
+  info: {
+    displayName: 'aboutContent';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -593,6 +636,17 @@ export interface SharedSocialMediaIconLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStats extends Struct.ComponentSchema {
+  collectionName: 'components_shared_stats';
+  info: {
+    displayName: 'stats';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    stat: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSteps extends Struct.ComponentSchema {
   collectionName: 'components_shared_steps';
   info: {
@@ -637,6 +691,17 @@ export interface SharedUser extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_videos';
+  info: {
+    displayName: 'video';
+  };
+  attributes: {
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -652,6 +717,7 @@ declare module '@strapi/strapi' {
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.form-next-to-section': DynamicZoneFormNextToSection;
       'dynamic-zone.hero': DynamicZoneHero;
+      'dynamic-zone.hero-about': DynamicZoneHeroAbout;
       'dynamic-zone.hero2': DynamicZoneHero2;
       'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
       'dynamic-zone.launches': DynamicZoneLaunches;
@@ -660,6 +726,7 @@ declare module '@strapi/strapi' {
       'dynamic-zone.related-products': DynamicZoneRelatedProducts;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'dynamic-zone.testimonials2': DynamicZoneTestimonials2;
+      'dynamic-zone.who-are-we': DynamicZoneWhoAreWe;
       'global.footer': GlobalFooter;
       'global.nav1': GlobalNav1;
       'global.navbar': GlobalNavbar;
@@ -669,6 +736,7 @@ declare module '@strapi/strapi' {
       'items.menus': ItemsMenus;
       'items.ray-items': ItemsRayItems;
       'items.socials': ItemsSocials;
+      'shared.about-content': SharedAboutContent;
       'shared.button': SharedButton;
       'shared.feature-card': SharedFeatureCard;
       'shared.footer-row': SharedFooterRow;
@@ -679,9 +747,11 @@ declare module '@strapi/strapi' {
       'shared.section': SharedSection;
       'shared.seo': SharedSeo;
       'shared.social-media-icon-links': SharedSocialMediaIconLinks;
+      'shared.stats': SharedStats;
       'shared.steps': SharedSteps;
       'shared.testimonials-data': SharedTestimonialsData;
       'shared.user': SharedUser;
+      'shared.video': SharedVideo;
     }
   }
 }
