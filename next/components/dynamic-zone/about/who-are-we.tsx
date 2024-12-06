@@ -95,7 +95,10 @@ export const WhoAreWe = ({
           {statData && (
             <div className="w-full flex flex-col gap-2 p-6 items-start justify-center ">
               {statData.map((stat, index) => (
-                <div key={index}>
+                <div
+                  key={index}
+                  className="border-b border-slate-600 last:border-none w-full"
+                >
                   {stats({
                     stat: stat.stat,
                     description: stat.description,
