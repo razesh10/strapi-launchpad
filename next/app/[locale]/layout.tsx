@@ -5,14 +5,15 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { generateMetadataObject } from "@/lib/shared/metadata";
 
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer/footer";
 import { CartProvider } from "@/context/cart-context";
 import { cn } from "@/lib/utils";
 import { ViewTransitions } from "next-view-transitions";
 import fetchContentType from "@/lib/strapi/fetchContentType";
-import { Button } from "antd";
 import Nav1 from "@/components/navbar/Nav1";
+import { WhoAreWe } from "@/components/dynamic-zone/about/who-are-we";
+import { HeroAbout } from "@/components/dynamic-zone/about/hero-about";
+import { Video } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,7 +56,13 @@ export default async function LocaleLayout({
     `filters[locale][$eq]=${locale}`,
     true
   );
-  console.log(nav1Data.Navbar.socials, "nav1Data");
+
+  const footer = await fetchContentType(
+    "footer",
+    `filters[locale][$eq]=${locale}`,
+    true
+  );
+
   return (
     <html lang={locale}>
       <AntdRegistry>
@@ -64,15 +71,19 @@ export default async function LocaleLayout({
             <body
               className={cn(
                 inter.className,
-                "bg-charcoal antialiased h-full w-full"
+                "bg-gradient-to-br from-slate-950 via-blue-950 to-slate-800 antialiased h-full w-full"
               )}
             >
-              {/* <Navbar data={pageData.navbar} locale={locale} /> */}
-              <Nav1 data={nav1Data.Navbar} locale={locale} />
-              {children}
-              <Button type="primary">Primary</Button>
+              <div className="mb-[60px]">
+                <Nav1 data={nav1Data.Navbar} locale={locale} />
+              </div>
 
-              <Footer data={pageData.footer} locale={locale} />
+              {children}
+              <Footer
+                footer_row={footer.footer_row}
+                locale={locale}
+                logo={footer.logo}
+              />
             </body>
           </CartProvider>
         </ViewTransitions>

@@ -1,5 +1,7 @@
 import type { Viewport } from "next";
-import { Locale, i18n } from '@/i18n.config'
+import { Locale, i18n } from "@/i18n.config";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "./globals.css";
 
@@ -11,21 +13,19 @@ export const viewport: Viewport = {
 };
 
 export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default function RootLayout({
   children,
-  params
+  params,
 }: {
-  children: React.ReactNode
-  params: { lang: Locale }
+  children: React.ReactNode;
+  params: { lang: Locale };
 }) {
   return (
     <html lang={params.lang}>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

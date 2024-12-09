@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_dynamic_zone_testimonials2s",
+  "info": {
+    "displayName": "Testimonials2",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "data": {
+      "displayName": "testimonials_data",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.testimonials-data"
+    },
+    "sub_heading": {
+      "type": "string"
+    }
+  }
+}

@@ -1,13 +1,15 @@
 "use client";
-import { Affix, Divider, Drawer, Flex, Image, Space } from "antd";
+import { Drawer, Flex, Image, Space } from "antd";
 import React, { useState } from "react";
 import Link from "antd/es/typography/Link";
 import Text from "antd/es/typography/Text";
 import { Facebook, Instagram, Menu, Twitter, X } from "lucide-react";
 import { strapiImage } from "@/lib/strapi/strapiImage";
+import { Button } from "../elements/button";
 
 type Props = {
   data: {
+    buttons: any[];
     menus: {
       URL: string;
       text: string;
@@ -18,8 +20,11 @@ type Props = {
       target?: string;
     }[];
     logo: {
-      url: string;
-      alt: string;
+      company?: string;
+      image: {
+        url: string;
+        alt: string;
+      };
     };
   };
   locale: string;
@@ -56,43 +61,49 @@ export const Nav1 = ({ data, locale }: Props) => {
     }
   };
   return (
-    <div className="fixed top-0 z-40 w-full bg-gray-950 backdrop-blur-lg">
-      <Flex className="justify-between items-center gap-[40px] px-4 py-2 max-w-7xl mx-auto">
+    <div className="fixed top-0 z-40 w-full bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 backdrop-blur-lg">
+      <Flex className="justify-between items-center gap-[40px] px-4 py-3 max-w-7xl mx-auto">
         {data?.logo && (
           <Link href="./">
             <Image
               preview={false}
-              src={
-                "https://www.khelpasal.com/_next/image?url=%2Flogo-white.png&w=256&q=75"
-              }
-              height={30}
-              alt={data?.logo?.alt}
+              src={strapiImage(data?.logo?.image?.url)}
+              height={28}
+              alt={data?.logo?.image?.alt}
             />
           </Link>
         )}
-        <Space size={20} className="hidden md:flex">
-          {data?.menus?.map((menu: any, i: number) => {
-            return (
-              <Link key={i} href={`/${locale}/${menu?.URL}`}>
-                <Text className="!text-white py-[8px] border-b-0 hover:border-b-[2px] hover:border-primary">
-                  {menu?.text}
-                </Text>
-              </Link>
-            );
-          })}
-        </Space>
-        {data?.socials && (
-          <Space className="hidden sm:flex" size={"middle"}>
-            {data?.socials.map((social: any, index: number) => (
-              <Flex
-                key={index}
-                className="bg-primary rounded-full justify-center items-center h-[32px] w-[32px]"
-              >
-                {Icon(social.text, social.URL, social.target)}
-              </Flex>
-            ))}
+        <div className="hidden md:block">
+          <Space size={20}>
+            {data?.menus?.map((menu: any, i: number) => {
+              return (
+                <Link
+                  key={i}
+                  href={`/${locale}/${menu?.URL}`}
+                  className="group/menu"
+                >
+                  <Text className="!text-white group-hover/menu:!text-blue-500 py-3 font-medium !text-base">
+                    {menu?.text}
+                  </Text>
+                  <div className="w-0 h-[1px] bg-blue-500 group-hover/menu:w-full transition-all duration-300 ease-in-out"></div>
+                </Link>
+              );
+            })}
           </Space>
+        </div>
+        {data?.buttons && (
+          <div>
+            {data?.buttons?.map &&
+              data?.buttons?.map((button: any, i: number) => {
+                return (
+                  <Link key={button?.id} href={`/${locale}${button.URL}`}>
+                    <Button variant={button?.type}>{button?.text}</Button>
+                  </Link>
+                );
+              })}
+          </div>
         )}
+
         <Menu className="block md:hidden cursor-pointer" onClick={menuSwitch} />
       </Flex>
       <Drawer
@@ -107,9 +118,9 @@ export const Nav1 = ({ data, locale }: Props) => {
               <Link href="./">
                 <Image
                   preview={false}
-                  src={data?.logo?.url}
+                  src={strapiImage(data?.logo?.image?.url)}
                   height={40}
-                  alt={data?.logo?.alt}
+                  alt={data?.logo?.image?.alt}
                 />
               </Link>
             )}
@@ -128,19 +139,6 @@ export const Nav1 = ({ data, locale }: Props) => {
             );
           })}
         </Flex>
-        <Divider />
-        {data?.socials && (
-          <Flex className="justify-center gap-[20px]">
-            {data?.socials.map((item: any, index: number) => (
-              <Flex
-                key={index}
-                className="bg-primary rounded-full justify-center items-center h-[32px] w-[32px]"
-              >
-                {Icon(item.platform, item.path)}
-              </Flex>
-            ))}
-          </Flex>
-        )}
       </Drawer>
     </div>
   );

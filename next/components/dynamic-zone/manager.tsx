@@ -25,7 +25,7 @@ const componentMapping: { [key: string]: any } = {
     { ssr: false }
   ),
   "dynamic-zone.how-it-works": dynamic(
-    () => import("./how-it-works").then((mod) => mod.HowItWorks),
+    () => import("./how-it-works").then((mod) => mod.HowItWorks2),
     { ssr: false }
   ),
   "dynamic-zone.brands": dynamic(
@@ -44,7 +44,7 @@ const componentMapping: { [key: string]: any } = {
     ssr: false,
   }),
   "dynamic-zone.form-next-to-section": dynamic(
-    () => import("./form-next-to-section").then((mod) => mod.FormNextToSection),
+    () => import("./contact1").then((mod) => mod.Contact1),
     { ssr: false }
   ),
   "dynamic-zone.faq": dynamic(() => import("./faq").then((mod) => mod.FAQ), {
@@ -65,6 +65,28 @@ const componentMapping: { [key: string]: any } = {
   "dynamic-zone.feature2": dynamic(
     () => import("./Feature2").then((mod) => mod.Feature2),
     { ssr: false }
+  ),
+  "dynamic-zone.cta2": dynamic(() => import("./cta2").then((mod) => mod.CTA2), {
+    ssr: false,
+  }),
+  "dynamic-zone.testimonials2": dynamic(
+    () =>
+      import("./testimonials/testimonials2").then((mod) => mod.Testimonial2),
+    {
+      ssr: false,
+    }
+  ),
+  "dynamic-zone.who-are-we": dynamic(
+    () => import("./about/who-are-we").then((mod) => mod.WhoAreWe),
+    {
+      ssr: false,
+    }
+  ),
+  "dynamic-zone.hero-about": dynamic(
+    () => import("./about/hero-about").then((mod) => mod.HeroAbout),
+    {
+      ssr: false,
+    }
   ),
 };
 

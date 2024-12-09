@@ -6,26 +6,20 @@
   },
   "options": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "menus": {
       "type": "component",
       "repeatable": true,
       "component": "shared.link"
     },
-    "socials": {
+    "logo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logo.logo"
+    },
+    "buttons": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link"
+      "component": "shared.button"
     }
   }
 }

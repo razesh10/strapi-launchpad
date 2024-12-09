@@ -55,7 +55,11 @@
         "dynamic-zone.form-next-to-section",
         "dynamic-zone.faq",
         "dynamic-zone.hero2",
-        "dynamic-zone.feature2"
+        "dynamic-zone.feature2",
+        "dynamic-zone.cta2",
+        "dynamic-zone.testimonials2",
+        "dynamic-zone.who-are-we",
+        "dynamic-zone.hero-about"
       ]
     }
   }

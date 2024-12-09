@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_dynamic_zone_who_are_wes",
+  "info": {
+    "displayName": "Who_are_we",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contents": {
+      "displayName": "aboutContent",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.about-content"
+    },
+    "statData": {
+      "displayName": "stats",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.stats"
+    },
+    "videoData": {
+      "displayName": "video",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video"
+    }
+  }
+}

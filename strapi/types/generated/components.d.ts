@@ -89,6 +89,19 @@ export interface DynamicZoneCta extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicZoneCta2 extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_cta2s';
+  info: {
+    displayName: 'cta2';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'shared.button', false>;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
 export interface DynamicZoneFaq extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_faqs';
   info: {
@@ -146,6 +159,7 @@ export interface DynamicZoneFormNextToSection extends Struct.ComponentSchema {
   attributes: {
     form: Schema.Attribute.Component<'shared.form', false>;
     heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     section: Schema.Attribute.Component<'shared.section', false>;
     social_media_icon_links: Schema.Attribute.Component<
       'shared.social-media-icon-links',
@@ -166,6 +180,21 @@ export interface DynamicZoneHero extends Struct.ComponentSchema {
     CTAs: Schema.Attribute.Component<'shared.button', true>;
     heading: Schema.Attribute.String;
     sub_heading: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneHeroAbout extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_hero_abouts';
+  info: {
+    description: '';
+    displayName: 'hero_about';
+  };
+  attributes: {
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
   };
 }
 
@@ -268,6 +297,35 @@ export interface DynamicZoneTestimonials extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicZoneTestimonials2 extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_testimonials2s';
+  info: {
+    description: '';
+    displayName: 'Testimonials2';
+  };
+  attributes: {
+    data: Schema.Attribute.Component<'shared.testimonials-data', true>;
+    heading: Schema.Attribute.String;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneWhoAreWe extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_who_are_wes';
+  info: {
+    description: '';
+    displayName: 'Who_are_we';
+  };
+  attributes: {
+    contents: Schema.Attribute.Component<'shared.about-content', false>;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    statData: Schema.Attribute.Component<'shared.stats', true>;
+    videoData: Schema.Attribute.Component<'shared.video', false>;
+  };
+}
+
 export interface GlobalFooter extends Struct.ComponentSchema {
   collectionName: 'components_global_footers';
   info: {
@@ -294,9 +352,9 @@ export interface GlobalNav1 extends Struct.ComponentSchema {
     displayName: 'Nav1';
   };
   attributes: {
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    buttons: Schema.Attribute.Component<'shared.button', true>;
+    logo: Schema.Attribute.Relation<'oneToOne', 'api::logo.logo'>;
     menus: Schema.Attribute.Component<'shared.link', true>;
-    socials: Schema.Attribute.Component<'shared.link', true>;
   };
 }
 
@@ -418,6 +476,18 @@ export interface ItemsSocials extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAboutContent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_about_contents';
+  info: {
+    displayName: 'aboutContent';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -446,6 +516,18 @@ export interface SharedFeatureCard extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.String;
     heading: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFooterRow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_rows';
+  info: {
+    description: '';
+    displayName: 'footer_row';
+  };
+  attributes: {
+    footer_links: Schema.Attribute.Component<'shared.link', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -550,7 +632,18 @@ export interface SharedSocialMediaIconLinks extends Struct.ComponentSchema {
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    link: Schema.Attribute.Component<'shared.link', true>;
+    link: Schema.Attribute.Component<'shared.link', false>;
+  };
+}
+
+export interface SharedStats extends Struct.ComponentSchema {
+  collectionName: 'components_shared_stats';
+  info: {
+    displayName: 'stats';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    stat: Schema.Attribute.String;
   };
 }
 
@@ -564,6 +657,22 @@ export interface SharedSteps extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTestimonialsData extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials_data';
+  info: {
+    displayName: 'testimonials_data';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    designation: Schema.Attribute.String;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    user_name: Schema.Attribute.String;
   };
 }
 
@@ -582,6 +691,17 @@ export interface SharedUser extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_videos';
+  info: {
+    displayName: 'video';
+  };
+  attributes: {
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -591,11 +711,13 @@ declare module '@strapi/strapi' {
       'cards.social-media-card': CardsSocialMediaCard;
       'dynamic-zone.brands': DynamicZoneBrands;
       'dynamic-zone.cta': DynamicZoneCta;
+      'dynamic-zone.cta2': DynamicZoneCta2;
       'dynamic-zone.faq': DynamicZoneFaq;
       'dynamic-zone.feature2': DynamicZoneFeature2;
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.form-next-to-section': DynamicZoneFormNextToSection;
       'dynamic-zone.hero': DynamicZoneHero;
+      'dynamic-zone.hero-about': DynamicZoneHeroAbout;
       'dynamic-zone.hero2': DynamicZoneHero2;
       'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
       'dynamic-zone.launches': DynamicZoneLaunches;
@@ -603,6 +725,8 @@ declare module '@strapi/strapi' {
       'dynamic-zone.related-articles': DynamicZoneRelatedArticles;
       'dynamic-zone.related-products': DynamicZoneRelatedProducts;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
+      'dynamic-zone.testimonials2': DynamicZoneTestimonials2;
+      'dynamic-zone.who-are-we': DynamicZoneWhoAreWe;
       'global.footer': GlobalFooter;
       'global.nav1': GlobalNav1;
       'global.navbar': GlobalNavbar;
@@ -612,8 +736,10 @@ declare module '@strapi/strapi' {
       'items.menus': ItemsMenus;
       'items.ray-items': ItemsRayItems;
       'items.socials': ItemsSocials;
+      'shared.about-content': SharedAboutContent;
       'shared.button': SharedButton;
       'shared.feature-card': SharedFeatureCard;
+      'shared.footer-row': SharedFooterRow;
       'shared.form': SharedForm;
       'shared.launches': SharedLaunches;
       'shared.link': SharedLink;
@@ -621,8 +747,11 @@ declare module '@strapi/strapi' {
       'shared.section': SharedSection;
       'shared.seo': SharedSeo;
       'shared.social-media-icon-links': SharedSocialMediaIconLinks;
+      'shared.stats': SharedStats;
       'shared.steps': SharedSteps;
+      'shared.testimonials-data': SharedTestimonialsData;
       'shared.user': SharedUser;
+      'shared.video': SharedVideo;
     }
   }
 }

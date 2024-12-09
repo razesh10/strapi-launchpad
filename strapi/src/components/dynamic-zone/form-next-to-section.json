@@ -29,6 +29,16 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.social-media-icon-links"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
