@@ -67,7 +67,7 @@ export const Nav1 = ({ data, locale }: Props) => {
           <Link href="./">
             <Image
               preview={false}
-              src={strapiImage(data?.logo?.image?.url)}
+              src={data?.logo ? strapiImage(data?.logo?.image?.url) : ""}
               height={28}
               alt={data?.logo?.image?.alt}
             />
@@ -118,7 +118,7 @@ export const Nav1 = ({ data, locale }: Props) => {
               <Link href="./">
                 <Image
                   preview={false}
-                  src={strapiImage(data?.logo?.image?.url)}
+                  src={data?.logo ? strapiImage(data?.logo?.image?.url) : ""}
                   height={40}
                   alt={data?.logo?.image?.alt}
                 />

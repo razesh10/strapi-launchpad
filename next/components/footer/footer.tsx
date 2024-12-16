@@ -24,7 +24,7 @@ export const Footer = ({ footer_row, locale, logo }: FooterProps) => {
         <div className="flex flex-col gap-6 md:gap-10">
           <Link href="/">
             <Image
-              src={strapiImage(logo?.image?.url)}
+              src={logo?.image ? strapiImage(logo?.image?.url) : ""}
               alt={logo?.image?.alt}
               height={40}
               width={150}

@@ -51,11 +51,12 @@ export default async function LocaleLayout({
     true
   );
 
-  const nav1Data = await fetchContentType(
+  const navData = await fetchContentType(
     "nav1",
     `filters[locale][$eq]=${locale}`,
     true
   );
+  console.log(navData);
 
   const footer = await fetchContentType(
     "footer",
@@ -75,14 +76,14 @@ export default async function LocaleLayout({
               )}
             >
               <div className="mb-[60px]">
-                <Nav1 data={nav1Data.Navbar} locale={locale} />
+                <Nav1 data={navData?.Navbar} locale={locale} />
               </div>
 
               {children}
               <Footer
-                footer_row={footer.footer_row}
+                footer_row={footer?.footer_row}
                 locale={locale}
-                logo={footer.logo}
+                logo={footer?.logo}
               />
             </body>
           </CartProvider>
